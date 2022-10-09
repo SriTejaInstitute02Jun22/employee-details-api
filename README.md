@@ -18,3 +18,14 @@ https://github.com/SriTejaInstitute02Jun22/employee-details-api.git
 3.get the employee data based on employee id.
 4.update the employee data based on employee id and employee email.
 5.delete the employee data based on employee mobile.
+
+
+EmployeeDetails
+	//attribute
+	private String empName;
+	private String empId;
+	private String empDept;
+	private double empSalary;
+	private String empJoiningDate;
+	private String empDeign;
+	
