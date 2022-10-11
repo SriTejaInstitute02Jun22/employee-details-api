@@ -39,8 +39,7 @@ public class EmployeeDetails {
 		this.empDepartment = empDepartment;
 	}
 	
-	
-
+	//Setter and Getter methods
 	public int getEmpId() {
 		return empId;
 	}

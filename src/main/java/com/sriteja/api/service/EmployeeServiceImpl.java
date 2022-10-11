@@ -14,10 +14,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 	private static final Logger logger=LoggerFactory.getLogger(EmployeeServiceImpl.class);
 	
 	@Autowired
-	  private EmployeeRepository employeeRepository;
+	  private EmployeeRepository employeeRepository;//dependency injection
 
 	/**
 	 * To insert the employee data in the table
+	 * implementing insertEmployeeDetails()
 	 */
 	@Override
 	public String insertEmployeeDetails(EmployeeDetails employeeDetails) {
@@ -29,6 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	/**
 	 * to get the details based on company
+	 * implementing getEmployeeDetails()
 	 */
 	@Override
 	public String getEmployeeDetails(String empCompany) {
@@ -39,17 +41,22 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	/**
 	 * update the employee details based on company
+	 * implementing the updateEmployeeDetails()
 	 */
 	@Override
 	public String updateEmployeeDetails(EmployeeDetails employeeDetails, String empCompany) {
+		logger.info("Employee Details : " +employeeDetails);
 		logger.info("Details in service layer : " +empCompany);
+		String response=null;
 		EmployeeDetails employee = employeeRepository.findByEmployeeCompany(empCompany);
 		if (Optional.ofNullable(employee).isPresent()) {
-			employee.setEmpCompany(employee.getEmpCompany());
+			employee.setEmpName(employeeDetails.getEmpName());
+			employee.setEmpDesignation(employeeDetails.getEmpDesignation());
 			employeeRepository.save(employee);
-			return "updated done";
+			
+			return response = "Updated employee details base on" +empCompany +"is done";
 		}else {
-		return "not updated";
-	}
+			return response = "Not updated";
+		}
 	}
 }

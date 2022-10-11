@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sriteja.api.model.EmployeeDetails;
@@ -20,7 +19,7 @@ public class EmployeeController {
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	
 	@Autowired
-	private EmployeeService employeeService;
+	private EmployeeService employeeService; //dependency injection
 	
 	/**
 	 * To insert the data into employee table
@@ -50,12 +49,14 @@ public class EmployeeController {
 	 * Updating the employee details
 	 * @param employeeDetails
 	 * @param empCompany
-	 * @return employee details
+	 * @return response
 	 */
 	@PutMapping("/update-employee-details/{empCompany}")
-	public String updateEmployeeDetails(@RequestBody EmployeeDetails employeeDetails, @PathVariable String empCompany) {
-		logger.info("Employee Details in controller layer : " +employeeDetails);
-   		return employeeService.updateEmployeeDetails(employeeDetails,empCompany);	
+	public String updateEmployeeDetails(@RequestBody EmployeeDetails employeeDetails,@PathVariable String empCompany) {
+		logger.info("Employee Details : " +employeeDetails);
+		logger.info("Employee Details in controller layer : " +empCompany);
+   		String response =  employeeService.updateEmployeeDetails(employeeDetails, empCompany);
+   		return response;
 		
 	}
 
