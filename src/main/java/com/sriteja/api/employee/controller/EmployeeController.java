@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sriteja.api.employee.model.EmployeeDetails;
 import com.sriteja.api.employee.service.EmployeeService;
 
-//this annotation is using for call company details
+/*
+ * this annotation is using for call company details
+ */
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
