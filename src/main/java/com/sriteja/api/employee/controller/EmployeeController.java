@@ -46,7 +46,7 @@ public class EmployeeController {
 	 * get the employee detailes based on employeeId
 	 * @param employeeId
 	 * @return
-	 **/
+	 * */
 	@GetMapping("/employee-details/{employeeId}")
 	public EmployeeDetails getEmployeeDetailsByEmployeeId(@PathVariable() String employeeId) {
 		logger.info("Employee Id in Controller Layer :: " + employeeId);
@@ -60,7 +60,7 @@ public class EmployeeController {
 	 * @param employeeId
 	 * @param employeeEmail
 	 * @return
-	 **/
+	 * */
 	@PutMapping("/update-employee-details/{employeeId}/{employeeEmail}")
 	public String updateEmployeeDetailsBasedOnEmployeeIdAndEmployeeEmail(@RequestBody EmployeeDetails employeeDetails,
 			@PathVariable int employeeId, @PathVariable String employeeEmail) {
@@ -69,7 +69,6 @@ public class EmployeeController {
 
 		String response = employeeService.updateEmployeeDetailsBasedOnEmployeeIdAndEmployeeEmail(employeeDetails,
 				employeeId, employeeEmail); // method calling
-
 		return response;
 	}
 
