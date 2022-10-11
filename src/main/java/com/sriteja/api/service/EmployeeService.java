@@ -11,4 +11,6 @@ public interface EmployeeService {
 
 	public String getEmployeeDetails(String empCompany);
 
+	public String updateEmployeeDetails(EmployeeDetails employeeDetails, String empCompany);
+
 }
