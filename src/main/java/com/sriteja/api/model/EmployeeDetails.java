@@ -105,6 +105,4 @@ public class EmployeeDetails {
 				+ ", empDepartment=" + empDepartment + "]";
 	}
 	
-	
-
 }
