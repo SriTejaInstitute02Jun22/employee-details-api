@@ -76,7 +76,7 @@ public class EmployeeController {
 	}
 
 	/**
-	 * this method is using to delete the employee details by employee mobile data
+	 * this method is using to the delete employee details by employee mobile data
 	 * 
 	 * @param employeeMobile
 	 * @return return
