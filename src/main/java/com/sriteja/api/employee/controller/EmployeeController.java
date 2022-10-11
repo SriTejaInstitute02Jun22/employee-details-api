@@ -53,7 +53,7 @@ public class EmployeeController {
 	}
 
 	/**
-	 * this method update EmployeeDetails Based On EmployeeId And EmployeeEmail
+	 * this method update EmployeeDetails Based On EmployeeId And Employee Email
 	 * 
 	 * @param employeeDetails
 	 * @param employeeId
@@ -72,7 +72,7 @@ public class EmployeeController {
 	}
 
 	/**
-	 * this method is using to delete the employee details by employeemobile
+	 * this method is using to delete the employee details by employee mobile data
 	 * 
 	 * @param employeeMobile
 	 * @return return
