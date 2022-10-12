@@ -28,6 +28,7 @@ public class EmployeeDetails {
 		this.employeeMobile = employeeMobile;
 	}
 
+	//setter and getter methods
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -60,6 +61,7 @@ public class EmployeeDetails {
 		this.employeeMobile = employeeMobile;
 	}
 
+	//toString() method
 	@Override
 	public String toString() {
 		return "EmployeeDetails [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeEmail="
