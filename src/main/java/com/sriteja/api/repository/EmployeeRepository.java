@@ -12,11 +12,14 @@ public interface EmployeeRepository extends JpaRepository<EmployeeDetails,Intege
 	
 	//to get the data based on company name
 	@Query(value=" select* from employee e where e.emp_company=:empCompany", nativeQuery=true) 
-	String finfByEmployeeName(@Param("empCompany") String empCompany);
+	String findByEmployeeName(@Param("empCompany") String empCompany);
 
 	//update the data based on company name
 	@Query(value=" select * from employee e where e.emp_company=:empCompany", nativeQuery=true)
 	EmployeeDetails findByEmployeeCompany(@Param ("empCompany") String empCompany);
+
+	@Query(value=" delete * from employee where emp_designation=:empDesignation", nativeQuery=true)
+	String findByEmployeeDesignation(@Param ("empDesignation")String empDesignation);
 
 	
 

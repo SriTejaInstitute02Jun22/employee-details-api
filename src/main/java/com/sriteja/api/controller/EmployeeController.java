@@ -3,6 +3,7 @@ package com.sriteja.api.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,6 +58,18 @@ public class EmployeeController {
 		logger.info("Employee Details in controller layer : " +empCompany);
    		String response =  employeeService.updateEmployeeDetails(employeeDetails, empCompany);
    		return response;
+		
+	}
+	
+	/**
+	 * deleting the employee details based on designation
+	 * @param empDesignation
+	 * @return employee details
+	 */
+	@DeleteMapping("delete-employee-details/{empDesignation}")
+	public String deleteEmployeeDetails(@PathVariable String empDesignation) {
+		logger.info("Employee Details in Controller layer : " +empDesignation);
+		return employeeService.deleteEmployeeDetails(empDesignation);
 		
 	}
 

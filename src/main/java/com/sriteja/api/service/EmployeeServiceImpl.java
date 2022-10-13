@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public String getEmployeeDetails(String empCompany) {
 		logger.info("Details in service layer : " +empCompany);
-		return employeeRepository.finfByEmployeeName(empCompany);
+		return employeeRepository.findByEmployeeName(empCompany);
 		
 	}
 
@@ -58,5 +58,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		}else {
 			return response = "Not updated";
 		}
+	}
+
+	@Override
+	public String deleteEmployeeDetails(String empDesignation) {
+		logger.info("Employee Details in Service layer : "+empDesignation);
+		return employeeRepository.findByEmployeeDesignation(empDesignation);
 	}
 }
