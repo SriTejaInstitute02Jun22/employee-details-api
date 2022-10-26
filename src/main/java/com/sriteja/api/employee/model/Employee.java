@@ -11,7 +11,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "employee")
-public class EmployeeDetails {
+public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,15 +26,12 @@ public class EmployeeDetails {
 	private String employeeJoiningDate;
 
 	// non parameterized constructor
-
-	public EmployeeDetails() {
+	public Employee() {
 	}
 
-	// parameterized constructor
-
-	public EmployeeDetails(int employeeId, String employeeName, String employeeMobile, String employeeEmail,
+	//parameterized constructor 
+	public Employee(int employeeId, String employeeName, String employeeMobile, String employeeEmail,
 			Double employeeSalary, String employeeDep, String employeeJoiningDate) {
-
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.employeeMobile = employeeMobile;
@@ -44,8 +41,7 @@ public class EmployeeDetails {
 		this.employeeJoiningDate = employeeJoiningDate;
 	}
 
-	// using setter and getter methods
-
+	//setter and getter methods
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -102,13 +98,13 @@ public class EmployeeDetails {
 		this.employeeJoiningDate = employeeJoiningDate;
 	}
 
-	// using toString method
-
+	//toString() method
 	@Override
 	public String toString() {
-		return "EmployeeDetails [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeMobile="
+		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeMobile="
 				+ employeeMobile + ", employeeEmail=" + employeeEmail + ", employeeSalary=" + employeeSalary
 				+ ", employeeDep=" + employeeDep + ", employeeJoiningDate=" + employeeJoiningDate + "]";
 	}
 
+	
 }

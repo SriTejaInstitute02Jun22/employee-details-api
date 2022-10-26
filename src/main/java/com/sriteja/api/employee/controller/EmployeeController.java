@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sriteja.api.employee.model.EmployeeDetails;
+import com.sriteja.api.bean.EmployeeDetails;
 import com.sriteja.api.employee.service.EmployeeService;
 
 /*
@@ -36,9 +36,9 @@ public class EmployeeController {
 	 */
 
 	@PostMapping("/add-employee-details")
-	public String insertEmployeeDetails(@RequestBody EmployeeDetails employeeDetails) {
+	public EmployeeDetails insertEmployeeDetails(@RequestBody EmployeeDetails employeeDetails) {
 		logger.info("Employee Details in Controller Layer = " + employeeDetails);
-		String response = employeeService.insertEmployeeDetails(employeeDetails);
+		EmployeeDetails response = employeeService.insertEmployeeDetails(employeeDetails);
 		return response;
 	}
 

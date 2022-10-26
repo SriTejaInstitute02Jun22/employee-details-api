@@ -1,10 +1,10 @@
 package com.sriteja.api.employee.service;
 
-import com.sriteja.api.employee.model.EmployeeDetails;
+import com.sriteja.api.bean.EmployeeDetails;
 
 public interface EmployeeService {
 
-	public String insertEmployeeDetails(EmployeeDetails employeeDetails);
+	public EmployeeDetails insertEmployeeDetails(EmployeeDetails employeeDetails);
 
 	public EmployeeDetails getEmployeeDetailsByOnEmployeeId(int employeeId);
 

@@ -6,20 +6,23 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.sriteja.api.employee.model.EmployeeDetails;
+import com.sriteja.api.employee.model.Employee;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<EmployeeDetails, String> {
+public interface EmployeeRepository extends JpaRepository<Employee, String> {
 	// JPQL (java persistence query language)
 	@Query(value = "select * from employee c where c.employee_id=?1", nativeQuery = true)
-	EmployeeDetails findBY(int employeeId);
+	Employee findBY(int employeeId);
 
 	@Query(value = "select * from employee c where c.employee_id=:employee_id and c.employee_email=:employee_email", nativeQuery = true)
-	EmployeeDetails findByEmployeeIdAndEmployeeEmail(@Param("employee_id") int employeeId,
+	Employee findByEmployeeIdAndEmployeeEmail(@Param("employee_id") int employeeId,
 			@Param("employee_email") String employeeEmail);
 
 	@Modifying
 	@Query(value = "delete from employee where employee_mobile=?1", nativeQuery = true)
 	void deleteByEmployeeMobile(String employeeMobile);
+
+	@Query(value = "select * from employee e where e.employee_email=:employeeEmail and employee_mobile=:employeeMobile", nativeQuery = true)
+	Employee getByEmployeeEmailAndEmployeeMobile(@Param("employeeEmail") String employeeEmail, @Param("employeeMobile")String employeeMobile);
 
 }
