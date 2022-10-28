@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sriteja.api.bean.EmployeeDetails;
 import com.sriteja.api.employee.service.EmployeeService;
 
-/*
- * this annotation is using for call company details
- * 
- * 
+/**
+ * this employee controller is handling all endpoint details.
  */
 @RestController
 @RequestMapping("/api")
